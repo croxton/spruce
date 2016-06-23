@@ -6,7 +6,7 @@ Some simple tweaks for the ExpressionEngine 3 control panel CSS styles.
 
 ### Requirements
 
-* [ExpressionEngine](https://ellislab.com/expressionengine) 3.x
+* [ExpressionEngine](https://ellislab.com/expressionengine) 3.4.0 (DP)
 
 ### Installation
 
