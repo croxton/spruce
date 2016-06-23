@@ -1,0 +1,152 @@
+/*
+ * Title:       Spruce CSS styles
+ * Description: Overrides for EE3 control panel styles
+ * Author:      Mark Croxton, mcroxton@hallmark-design.co.uk
+ * Copyright:   Hallmark Design
+ * Updated:     June 23 2016
+*/
+
+/* main background color */
+body {
+	background: #F2F4F5;
+}
+
+/* main page title - ideally should have a class! */
+.full .tbl-ctrls h1:first-of-type {
+	color: #1F80BD;
+	font-size: 1.5em;
+}
+
+/* global nav */
+.nav-global-wrap {
+	background: #25394B;
+}
+
+.nav-global a:hover {
+	color: #FFF;
+}
+
+.nav-global .nav-sub-menu a.nav-add,
+.nav-main .nav-sub-menu a.nav-add, 
+.nav-custom .nav-sub-menu a.nav-add {
+	color: #1F80BD;
+	background: #E8F8FF;
+}
+
+.nav-global .nav-sub-menu a.nav-add .icon-add:before,
+.nav-global .nav-sub-menu a.nav-add:hover .icon-add:before, 
+.nav-main .nav-sub-menu a.nav-add .icon-add:before, 
+.nav-main .nav-sub-menu a.nav-add:hover .icon-add:before, 
+.nav-custom .nav-sub-menu a.nav-add .icon-add:before, 
+.nav-custom .nav-sub-menu a.nav-add:hover .icon-add:before {
+	color: #1F80BD;
+}
+
+.nav-global .nav-sub-menu a.nav-add:hover,
+.nav-main .nav-sub-menu a.nav-add:hover,
+.nav-custom .nav-sub-menu a.nav-add:hover {
+	background: #CBE8F5;
+}
+
+.nav-global .nav-site {
+	border-width: 0 0 0 1px;
+}
+
+.nav-global .nav-site:hover, 
+.nav-global .nav-has-sub:hover
+{
+	background-color: #25394B;
+}
+
+/* menu background color */
+.nav-main-wrap {
+	background: #354D6A;
+}
+
+/* menu buttons */
+.nav-main a, .nav-custom a {
+	color: #DFE0E2;
+	background-color: #354D6A;
+	border-color: #354D6A;
+}
+
+.nav-main a:hover, 
+.nav-custom a:hover, 
+.nav-main a.nav-open, 
+.nav-custom a.nav-open {
+	color: #FFF;
+	border-color: rgba(255,255,255,.3);
+}
+
+.nav-main a.nav-open, .nav-custom a.nav-open {
+	background: #2D4261;
+}
+
+/* dropdown submenus */
+.nav-main .nav-sub-menu, 
+.nav-custom .nav-sub-menu, 
+.nav-global .nav-sub-menu,
+.filters .sub-menu {
+	border: none;
+	box-shadow: 0 0 0 1px rgba(0, 0, 20, 0.1), 0 5px 20px rgba(0, 0, 0, 0.25);
+	margin-top:0;
+}
+
+.nav-main .nav-sub-menu ul, 
+.nav-custom .nav-sub-menu ul, 
+.nav-global .nav-sub-menu,
+.filters .sub-menu {
+	background: #FFF;
+}
+
+.filters .sub-menu {
+	top: auto;
+}
+
+.nav-main .nav-sub-menu a, 
+.nav-custom .nav-sub-menu a, 
+.nav-global .nav-sub-menu a,
+.filters .sub-menu a {
+	color: #333;
+	border-color: transparent;
+}
+
+.nav-main .nav-sub-menu a:hover, 
+.nav-custom .nav-sub-menu a:hover, 
+.nav-global .nav-sub-menu a:hover,
+.filters .sub-menu a:hover {
+	color: #000;
+	background: #D5D8DD;
+}
+
+.filters .sub-menu a {
+	font-weight: 400;
+	font-size: .84em;
+}
+
+/* custom menu */
+.nav-custom hr {
+	border-color: rgba(255,255,255,.3);
+}
+
+/* sidebar */
+.sidebar h2 {
+	background-image: none;
+	box-shadow: none;
+}
+
+.sidebar a:link {
+	text-decoration: none;
+}
+
+/* tabs */
+@media screen and (min-width: 750px) {
+	.tab-wrap .tabs a {
+		border-top: 1px solid transparent;
+	}
+	.tab-wrap .tabs a.act {
+		color: #000;
+		background: #FFF;
+		border-top-color: #E8E8E8;
+	}
+}
