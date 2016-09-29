@@ -1,9 +1,9 @@
 /*
  * Title:       Spruce CSS styles
- * Description: Overrides for EE3 control panel styles
+ * Description: Overrides for EE 3.4.3+ control panel styles
  * Author:      Mark Croxton, mcroxton@hallmark-design.co.uk
  * Copyright:   Hallmark Design
- * Updated:     June 23 2016
+ * Updated:     September 29 2016
 */
 
 /* main background color */
@@ -31,6 +31,8 @@ body {
 .nav-custom .nav-sub-menu a.nav-add {
 	color: #1F80BD;
 	background: #E8F8FF;
+	border:none;
+	margin: 0;
 }
 
 .nav-global .nav-sub-menu a.nav-add .icon-add:before,
@@ -61,6 +63,9 @@ body {
 /* menu background color */
 .nav-main-wrap {
 	background: #354D6A;
+	border-bottom: none;
+	-webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 /* menu buttons */
@@ -74,12 +79,18 @@ body {
 .nav-custom a:hover, 
 .nav-main a.nav-open, 
 .nav-custom a.nav-open {
-	color: #FFF;
+	color: #DFE0E2;
+	background: #2D4261;
 	border-color: rgba(255,255,255,.3);
 }
 
 .nav-main a.nav-open, .nav-custom a.nav-open {
 	background: #2D4261;
+}
+
+/* tools icons */
+.nav-main [class^="icon-"]::before {
+	color: #73BBE8;
 }
 
 /* dropdown submenus */
@@ -90,6 +101,10 @@ body {
 	border: none;
 	box-shadow: 0 0 0 1px rgba(0, 0, 20, 0.1), 0 5px 20px rgba(0, 0, 0, 0.25);
 	margin-top:0;
+}
+
+.nav-custom .nav-sub-menu {
+	margin-top:-5px;
 }
 
 .nav-main .nav-sub-menu ul, 
@@ -124,9 +139,12 @@ body {
 	font-size: .84em;
 }
 
-/* custom menu */
-.nav-custom hr {
-	border-color: rgba(255,255,255,.3);
+/* custom menu wrap */
+.nav-custom-wrap {
+	background: #354D6A;
+	border-top: 1px solid #566A83;
+	-webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 /* sidebar */

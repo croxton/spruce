@@ -1,4 +1,4 @@
-##Spruce v1.0.0
+##Spruce v1.0.1
 
 Some simple tweaks for the ExpressionEngine 3 control panel CSS styles.
 
@@ -6,7 +6,7 @@ Some simple tweaks for the ExpressionEngine 3 control panel CSS styles.
 
 ### Requirements
 
-* [ExpressionEngine](https://ellislab.com/expressionengine) 3.4.0 (DP)
+* [ExpressionEngine](https://ellislab.com/expressionengine) 3.4.3+
 
 ### Installation
 
