@@ -3,7 +3,7 @@
  * Description: Overrides for EE 3.4.3+ control panel styles
  * Author:      Mark Croxton, mcroxton@hallmark-design.co.uk
  * Copyright:   Hallmark Design
- * Updated:     September 29 2016
+ * Updated:     May 23 2017
 */
 
 /* main background color */
@@ -166,5 +166,23 @@ body {
 		color: #000;
 		background: #FFF;
 		border-top-color: #E8E8E8;
+	}
+}
+
+@media screen and (max-width: 749px) {
+
+	/* tidy up headings */
+	.right {
+		float: none;
+	}
+	h1 {
+		margin: 1em 0;
+	}
+
+	/* prevent screen zooming when interacting with form controls on touch devices */
+	input[type="text"], textarea, select {
+		font-size: 16px;
+		padding:2px 3px 3px;
+		vertical-align: top;
 	}
 }
