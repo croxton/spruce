@@ -1,4 +1,4 @@
-## Spruce v1.0.2
+## Spruce v1.0.3
 
 Some simple tweaks for the ExpressionEngine 3 control panel CSS styles.
 

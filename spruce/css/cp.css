@@ -3,8 +3,12 @@
  * Description: Overrides for EE 3.4.3+ control panel styles
  * Author:      Mark Croxton, mcroxton@hallmark-design.co.uk
  * Copyright:   Hallmark Design
- * Updated:     May 23 2017
+ * Updated:     June 14 2017
 */
+
+/* ============================================================================
+   Core CSS tweaks
+   ========================================================================= */
 
 /* main background color */
 body {
@@ -185,4 +189,61 @@ body {
 		padding:2px 3px 3px;
 		vertical-align: top;
 	}
+}
+
+/* ============================================================================
+   Addon specific display fixes
+   ========================================================================= */
+
+/* Playa */
+.playa-dp,
+.playa-ss {
+	margin-bottom: 10px ! important;
+}
+.playa-dp-pane {
+	white-space: normal;
+}
+@media screen and (max-width: 749px) {
+	.playa-dp-pane select,
+	.playa-dp-filters .playa-dp-search label input {
+		font: 11px system-ui;
+	}
+	.playa-dp-filters .playa-dp-search label span span {
+		opacity: 0;
+	}
+}
+
+/* Assets */
+.assets-buttons {
+	margin-bottom: 10px;
+}
+
+.setting-field .assets-btn.assets-btn,
+.assets-fm-upload .assets-btn.assets-btn {
+	background-color: #0084bd ! important;
+	border: 1px solid #0084bd;
+	color: #fff ! important;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+
+.setting-field .assets-btn.assets-btn {
+	font-size: 11px;
+}
+
+.setting-field .assets-btn.assets-btn:not(.assets-disabled):hover,
+.assets-fm-upload .assets-btn.assets-btn:not(.assets-disabled):hover {
+	background-color: #186291 ! important;
+	border-color: #186291 ! important;
+}
+
+.assets-btn.assets-disabled + .assets-btn {
+	margin-left:0;
+}
+
+.assets-listview {
+	margin-right: 10px;
+}
+.assets-contextmenu {
+	font-size: 13px;
 }
