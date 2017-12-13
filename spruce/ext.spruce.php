@@ -21,7 +21,7 @@ class Spruce_ext {
 	{
 		// required extension properties
 		$this->name				= 'Spruce';
-		$this->version			= '1.0.3';
+		$this->version			= '1.0.4';
 		$this->description		= 'Spruce up the control panel with some minor CSS tweaks';
 		$this->settings_exist	= 'n';
 	}

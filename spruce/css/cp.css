@@ -1,24 +1,118 @@
 /*
  * Title:       Spruce CSS styles
- * Description: Overrides for EE 3.4.3+ control panel styles
+ * Description: Overrides for EE 3.4.3+ and EE 4.0.0+ control panel styles
  * Author:      Mark Croxton, mcroxton@hallmark-design.co.uk
  * Copyright:   Hallmark Design
- * Updated:     June 14 2017
+ * Updated:     December 13 2017
 */
 
 /* ============================================================================
    Core CSS tweaks
    ========================================================================= */
 
-/* main background color */
+/* base element styles */
 body {
 	background: #F2F4F5;
 }
 
-/* main page title - ideally should have a class! */
-.full .tbl-ctrls h1:first-of-type {
+a[class*=icon-] {
 	color: #1F80BD;
-	font-size: 1.5em;
+}
+
+a[class*=icon-]:hover {
+	color: #354C6A;
+}
+
+th {
+	border-bottom-width: 1px;
+}
+
+td {
+	border-bottom-color: #eee;
+}
+
+input, 
+textarea {
+	-moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;	
+}
+
+/* overrides for small screens */
+@media screen and (max-width: 749px) {
+
+	/* tidy up headings */
+	.right {
+		float: none;
+	}
+	h1 {
+		margin: 1em 0;
+	}
+
+	/* prevent screen zooming when interacting with form controls on touch devices */
+	input[type="text"], 
+	textarea, 
+	select {
+		font-size: 16px;
+		padding: 2px 3px 3px;
+		vertical-align: top;
+	}
+}
+
+/* consistent borders */
+h1, 
+h2, 
+.sidebar h2, 
+.form-standard, 
+.table-list-wrap .tbl-list-wrap, 
+.tbl-wrap table, 
+.box {
+	border-color: #E4E8EA;
+}
+
+/* boxes / wrappers / containers - soft shadow effect */
+.box.sidebar, 
+.box:not(.table-list-wrap):not(.full), 
+.form-standard, 
+.tbl-list-wrap, 
+.tbl-wrap {
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(158,158,158,0.15);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(158,158,158,0.15);
+	box-shadow: 0px 0px 20px 0px rgba(158,158,158,0.15);
+}
+
+.box > .form-standard {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: none;
+}
+
+.form-standard {
+	margin-bottom: 1em;
+}
+
+.tbl-wrap {
+	padding-bottom: 0;
+}
+
+/* box / table headers & footers */
+.box.sidebar h2, 
+.sidebar .actions, 
+th, 
+tbody tr.tbl-action td, 
+tbody tr.tbl-action:hover td, 
+.form-ctrls {
+	background-image: -moz-linear-gradient(top,#fff,#f9f9f9);
+    background-image: -webkit-linear-gradient(top,#fff,#f9f9f9);
+    background-image: linear-gradient(to right,top,#fff,#f9f9f9);
+}
+
+/* main page title */
+.section-header__title,
+.full .tbl-ctrls h1:first-of-type {
+	color: #354C6A;
+	font-weight: bold;
 }
 
 /* global nav */
@@ -32,25 +126,36 @@ body {
 
 .nav-global .nav-sub-menu a.nav-add,
 .nav-main .nav-sub-menu a.nav-add, 
-.nav-custom .nav-sub-menu a.nav-add {
+.nav-main-wrap .nav-custom .nav-sub-menu a.nav-add {
 	color: #1F80BD;
 	background: #E8F8FF;
 	border:none;
 	margin: 0;
 }
 
+.nav-global .nav-sub-menu a.nav-manage {
+	color: #1F80BD;
+	background: #fff;
+	border-top: 1px dotted #ccc;
+	font-weight: bold;
+}
+
+.nav-global a:hover [class*=icon-] {
+	color: #1F80BD;
+}
+
 .nav-global .nav-sub-menu a.nav-add .icon-add:before,
 .nav-global .nav-sub-menu a.nav-add:hover .icon-add:before, 
 .nav-main .nav-sub-menu a.nav-add .icon-add:before, 
 .nav-main .nav-sub-menu a.nav-add:hover .icon-add:before, 
-.nav-custom .nav-sub-menu a.nav-add .icon-add:before, 
-.nav-custom .nav-sub-menu a.nav-add:hover .icon-add:before {
+.nav-main-wrap .nav-custom .nav-sub-menu a.nav-add .icon-add:before, 
+.nav-main-wrap .nav-custom .nav-sub-menu a.nav-add:hover .icon-add:before {
 	color: #1F80BD;
 }
 
 .nav-global .nav-sub-menu a.nav-add:hover,
 .nav-main .nav-sub-menu a.nav-add:hover,
-.nav-custom .nav-sub-menu a.nav-add:hover {
+.nav-main-wrap .nav-custom .nav-sub-menu a.nav-add:hover {
 	background: #CBE8F5;
 }
 
@@ -73,22 +178,26 @@ body {
 }
 
 /* menu buttons */
-.nav-main a, .nav-custom a {
+.nav-main a, .nav-main-wrap .nav-custom a {
 	color: #DFE0E2;
 	background-color: #354D6A;
 	border-color: #354D6A;
 }
 
+.nav-main-wrap .nav-custom .nav-sub-menu a {
+	background-color: #FFF;
+}
+
 .nav-main a:hover, 
-.nav-custom a:hover, 
+.nav-main-wrap .nav-custom a:hover, 
 .nav-main a.nav-open, 
-.nav-custom a.nav-open {
+.nav-main-wrap .nav-custom a.nav-open {
 	color: #DFE0E2;
 	background: #2D4261;
 	border-color: rgba(255,255,255,.3);
 }
 
-.nav-main a.nav-open, .nav-custom a.nav-open {
+.nav-main a.nav-open, .nav-main-wrap .nav-custom a.nav-open {
 	background: #2D4261;
 }
 
@@ -99,7 +208,7 @@ body {
 
 /* dropdown submenus */
 .nav-main .nav-sub-menu, 
-.nav-custom .nav-sub-menu, 
+.nav-main-wrap .nav-custom .nav-sub-menu, 
 .nav-global .nav-sub-menu,
 .filters .sub-menu {
 	border: none;
@@ -107,23 +216,19 @@ body {
 	margin-top:0;
 }
 
-.nav-custom .nav-sub-menu {
+.nav-main-wrap .nav-custom .nav-sub-menu {
 	margin-top:-5px;
 }
 
 .nav-main .nav-sub-menu ul, 
-.nav-custom .nav-sub-menu ul, 
+.nav-main-wrap .nav-custom .nav-sub-menu ul, 
 .nav-global .nav-sub-menu,
 .filters .sub-menu {
 	background: #FFF;
 }
 
-.filters .sub-menu {
-	top: auto;
-}
-
 .nav-main .nav-sub-menu a, 
-.nav-custom .nav-sub-menu a, 
+.nav-main-wrap .nav-custom .nav-sub-menu a, 
 .nav-global .nav-sub-menu a,
 .filters .sub-menu a {
 	color: #333;
@@ -131,16 +236,27 @@ body {
 }
 
 .nav-main .nav-sub-menu a:hover, 
-.nav-custom .nav-sub-menu a:hover, 
+.nav-main-wrap .nav-custom .nav-sub-menu a:hover, 
 .nav-global .nav-sub-menu a:hover,
 .filters .sub-menu a:hover {
 	color: #000;
 	background: #D5D8DD;
 }
 
+/* filters submenu */
+.filters .sub-menu {
+	top: auto;
+	left: 1px;
+}
+
 .filters .sub-menu a {
 	font-weight: 400;
 	font-size: .84em;
+}
+
+/* section menu buttons (e.g. Upload file) */
+.filter-submenu {
+	top: auto;
 }
 
 /* custom menu wrap */
@@ -162,6 +278,10 @@ body {
 }
 
 /* tabs */
+.tab-wrap .tabs a {
+	border-top: 1px solid #E4E8EA;
+}
+
 @media screen and (min-width: 750px) {
 	.tab-wrap .tabs a {
 		border-top: 1px solid transparent;
@@ -169,26 +289,34 @@ body {
 	.tab-wrap .tabs a.act {
 		color: #000;
 		background: #FFF;
-		border-top-color: #E8E8E8;
+		border-top-color: transparent;
 	}
 }
 
-@media screen and (max-width: 749px) {
+/* form instructions */
+.field-instruct em {
+	color: #8f9697
+}
 
-	/* tidy up headings */
-	.right {
-		float: none;
-	}
-	h1 {
-		margin: 1em 0;
-	}
+/* buttons - kill the bevel and make a consistent size */
+.btn,
+.btn:hover,
+.filter-item__link,
+.filter-item__link--action {
+	-moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 6px 8px 7px ! important;
+}
 
-	/* prevent screen zooming when interacting with form controls on touch devices */
-	input[type="text"], textarea, select {
-		font-size: 16px;
-		padding:2px 3px 3px;
-		vertical-align: top;
-	}
+/* homepage specific */
+.home-layout h2 {
+	border-style: dotted;
+}
+
+/* Footer */
+.footer {
+	color: #909ea5;
 }
 
 /* ============================================================================
@@ -223,8 +351,6 @@ body {
 	background-color: #0084bd ! important;
 	border: 1px solid #0084bd;
 	color: #fff ! important;
-	text-transform: uppercase;
-	border-radius: 5px;
 }
 
 .setting-field .assets-btn.assets-btn {
@@ -246,4 +372,7 @@ body {
 }
 .assets-contextmenu {
 	font-size: 13px;
+}
+.assets-active {
+	outline: none ! important;
 }
